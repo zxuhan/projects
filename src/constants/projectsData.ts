@@ -1,12 +1,15 @@
 import { Project } from '../types/project';
 import { SLIDE_IDS } from './slideIds';
+import busReview from '../assets/busPreview.png';
+import nocodeReview from '../assets/nocodePreview.png';
+import likePreview from '../assets/likePreview.png';
 
 export const projectsData: Project[] = [
   {
     id: SLIDE_IDS.AGENTIC_WEBSITE,
     name: 'No Code',
     title: 'No Code',
-    preview: '', // ← import your asset at the top and replace this
+    preview: nocodeReview,
     description:
       'A full-stack AI platform to generate, preview, and deploy web applications with LLMs and real-time streaming.',
     tech: ['Spring Boot 3', 'LangChain4j', 'Redis'],
@@ -29,7 +32,7 @@ export const projectsData: Project[] = [
     id: SLIDE_IDS.LIKE_SYSTEM,
     name: 'High-Performance Like System',
     title: 'High-Performance Like System',
-    preview: '',
+    preview: likePreview,
     description:
       'A high-concurrency like system with three-tier caching, HeavyKeeper algorithm for hot key detection, and event-driven async processing via Apache Pulsar.',
     tech: ['Spring Boot 3', 'Redis', 'Caffeine', 'Apache Pulsar'],
@@ -52,7 +55,7 @@ export const projectsData: Project[] = [
     id: SLIDE_IDS.BUS_ROUTING,
     name: 'Via Maastricht',
     title: 'Via Maastricht',
-    preview: '',
+    preview: busReview,
     description:
       'A full-stack transit routing app with Spring Boot3 and customized A* search over GTFS data. React frontend with zip code autocomplete and Google Maps JS API.',
     tech: ['Spring Boot 3', 'React', 'A* Algorithm'],

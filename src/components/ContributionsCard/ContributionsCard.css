@@ -1,0 +1,284 @@
+.contributions-card {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 520px;
+
+  --pr-merged: #8957e5;
+  --pr-open: #1a7f37;
+}
+
+[data-theme="dark"] .contributions-card {
+  --pr-merged: #a371f7;
+  --pr-open: #3fb950;
+}
+
+.contributions-header {
+  flex-shrink: 0;
+
+  margin-bottom: 20px;
+}
+
+.contributions-title {
+  font-size: 2.2em;
+  font-weight: 600;
+
+  width: fit-content;
+  margin-bottom: 8px;
+
+  color: var(--text-primary);
+}
+
+.contributions-tagline {
+  font-size: 1em;
+  line-height: 1.6;
+
+  color: var(--text-secondary);
+}
+
+.contributions-list {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+
+  margin: 0;
+  padding: 2px 8px 2px 0;
+
+  list-style: none;
+
+  gap: 6px;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+.contributions-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.contributions-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.contributions-list::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: var(--border-strong);
+}
+
+.contributions-list::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+.repo-row {
+  list-style: none;
+
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .repo-row {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.repo-row-header {
+  display: flex;
+  align-items: center;
+
+  padding: 10px 14px;
+
+  gap: 12px;
+}
+
+.repo-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 26px;
+  height: 26px;
+  padding: 0;
+
+  cursor: none;
+  transition: all 0.2s ease;
+
+  color: var(--text-secondary);
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.repo-toggle:hover {
+  color: var(--accent-primary);
+  background: var(--bg-gradient-1);
+}
+
+.repo-toggle:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.repo-toggle i {
+  font-size: 0.8em;
+}
+
+.repo-logo {
+  width: 26px;
+  height: 26px;
+
+  border-radius: 6px;
+  background: var(--bg-tertiary);
+
+  object-fit: cover;
+}
+
+.repo-logo-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.05em;
+
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+}
+
+.repo-link {
+  font-size: 1em;
+  font-weight: 600;
+
+  flex: 1;
+  min-width: 0;
+
+  cursor: none;
+  transition: color 0.2s ease;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: var(--text-primary);
+}
+
+.repo-link:hover {
+  color: var(--accent-primary);
+}
+
+.repo-pr-count {
+  font-size: 0.8em;
+  font-weight: 500;
+
+  flex-shrink: 0;
+
+  padding: 3px 10px;
+
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .repo-pr-count {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.pr-list {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 2px 14px 12px 50px;
+
+  list-style: none;
+
+  gap: 2px;
+}
+
+.pr-item {
+  display: flex;
+  align-items: center;
+
+  padding: 7px 10px;
+
+  list-style: none;
+
+  border-radius: 8px;
+
+  gap: 10px;
+}
+
+.pr-item:hover {
+  background: var(--bg-gradient-1);
+}
+
+.pr-icon {
+  font-size: 0.95em;
+
+  flex-shrink: 0;
+
+  width: 16px;
+
+  text-align: center;
+}
+
+.pr-icon-merged {
+  color: var(--pr-merged);
+}
+
+.pr-icon-open {
+  color: var(--pr-open);
+}
+
+.pr-repo-link {
+  font-size: 0.95em;
+  font-weight: 500;
+
+  flex-shrink: 0;
+
+  cursor: none;
+  transition: color 0.2s ease;
+  text-decoration: none;
+
+  color: var(--text-hint);
+}
+
+.pr-repo-link:hover {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
+.pr-link {
+  font-size: 0.95em;
+
+  flex: 1;
+  min-width: 0;
+
+  cursor: none;
+  transition: color 0.2s ease;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: var(--text-primary);
+}
+
+.pr-link:hover {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
+.pr-number {
+  font-size: 0.85em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  flex-shrink: 0;
+
+  color: var(--text-hint);
+}

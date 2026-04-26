@@ -3,22 +3,6 @@ import { GITHUB_TOKEN } from '../../constants/userConfig';
 import { GitHubRepoInfo, Link, Project } from '../../types/project';
 import './ProjectCard.css';
 
-const formatCount = (count: number): string => {
-  if (count >= 1000) {
-    return `${(count / 1000).toFixed(1)}k`;
-  }
-  return count.toString();
-};
-
-const formatDate = (dateString: string): string => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('zh-CN', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
-};
-
 const GitHubStats = memo(
   ({
     repoInfo,
@@ -27,30 +11,28 @@ const GitHubStats = memo(
     repoInfo: GitHubRepoInfo | null;
     loading: boolean;
   }) => {
-    return (
-      <div className={`github-stats animate`}>
-        {loading ? (
+    if (loading) {
+      return (
+        <div className={`github-stats animate`}>
           <div className="loading-stats">
             <i className="fas fa-spinner fa-spin"></i>
             <span>Loading repository info...</span>
           </div>
-        ) : repoInfo ? (
-          <div className="repo-meta">
-            {repoInfo.language && (
-              <div className="meta-item cursor-target">
-                <span>{repoInfo.language}</span>
-              </div>
-            )}
-            <div className="meta-item cursor-target">
-              <span>Created {formatDate(repoInfo.createdAt)}</span>
-            </div>
+        </div>
+      );
+    }
+
+    if (!repoInfo?.language) {
+      return null;
+    }
+
+    return (
+      <div className={`github-stats animate`}>
+        <div className="repo-meta">
+          <div className="meta-item cursor-target">
+            <span>{repoInfo.language}</span>
           </div>
-        ) : (
-          <div className="no-repo-info">
-            <i className="fas fa-info-circle"></i>
-            <span>GitHub repository info unavailable</span>
-          </div>
-        )}
+        </div>
       </div>
     );
   },

@@ -1,6 +1,6 @@
 import { Project } from '../types/project';
 import { SLIDE_IDS } from './slideIds';
-import busReview from '../assets/busPreview.png';
+import gpuOperatorPreview from '../assets/gpuOperatorPreview.png';
 import nocodeReview from '../assets/nocodePreview.png';
 import likePreview from '../assets/likePreview.png';
 
@@ -14,11 +14,6 @@ export const projectsData: Project[] = [
       'A full-stack AI platform to generate, preview, and deploy web applications with LLMs and real-time streaming.',
     tech: ['Spring Boot 3', 'LangChain4j', 'Redis'],
     links: [
-      {
-        type: 'demo',
-        url: 'https://github.com/zxuhan/AI-code-platform',
-        text: 'Live Demo',
-      },
       {
         type: 'code',
         url: 'https://github.com/zxuhan/AI-code-platform',
@@ -38,11 +33,6 @@ export const projectsData: Project[] = [
     tech: ['Spring Boot 3', 'Redis', 'Caffeine', 'Apache Pulsar'],
     links: [
       {
-        type: 'demo',
-        url: 'https://github.com/zxuhan/like-app-backend',
-        text: 'Live Demo',
-      },
-      {
         type: 'code',
         url: 'https://github.com/zxuhan/like-app-backend',
         text: 'GitHub',
@@ -52,24 +42,19 @@ export const projectsData: Project[] = [
     layout: 'reverse',
   },
   {
-    id: SLIDE_IDS.BUS_ROUTING,
-    name: 'Via Maastricht',
-    title: 'Via Maastricht',
-    preview: busReview,
+    id: SLIDE_IDS.GPU_OPERATOR,
+    name: 'GPU K8s Operator',
+    title: 'GPU K8s Operator',
+    preview: gpuOperatorPreview,
     description:
-      'A full-stack transit routing app with Spring Boot3 and customized A* search over GTFS data. React frontend with zip code autocomplete and Google Maps JS API.',
-    tech: ['Spring Boot 3', 'React', 'A* Algorithm'],
+      'Rolling-window GPU-hour budgets for Kubernetes, enforced via eviction, pause, or alert.',
+    tech: ['Go', 'Kubernetes', 'Kubebuilder', 'Prometheus'],
     links: [
       {
-        type: 'demo',
-        url: 'https://github.com/zxuhan/bus-routing',
-        text: 'Live Demo',
-      },
-      {
         type: 'code',
-        url: 'https://github.com/zxuhan/bus-routing',
+        url: 'https://github.com/zxuhan/gpu-k8s-operator',
         text: 'GitHub',
-        githubRepo: 'zxuhan/bus-routing',
+        githubRepo: 'zxuhan/gpu-k8s-operator',
       },
     ],
     layout: 'standard',
@@ -93,9 +78,14 @@ export const mapData = [
     icon: 'fas fa-heart',
   },
   {
-    id: SLIDE_IDS.BUS_ROUTING,
-    name: 'Maastricht Bus Routing App',
-    icon: 'fas fa-bus',
+    id: SLIDE_IDS.GPU_OPERATOR,
+    name: 'GPU K8s Operator',
+    icon: 'fas fa-microchip',
+  },
+  {
+    id: SLIDE_IDS.OPEN_SOURCE,
+    name: 'Open Source Contributions',
+    icon: 'fas fa-code-branch',
   },
   {
     id: SLIDE_IDS.OVERVIEW,

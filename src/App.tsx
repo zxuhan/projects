@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import './App.css';
+import ContributionsSlide from './components/ContributionsSlide/ContributionsSlide';
 import MiniMap from './components/MiniMap/MiniMap';
 import OverviewSlide from './components/OverviewSlide/OverviewSlide';
 import ProgressBar from './components/ProgressBar/ProgressBar';
@@ -12,8 +13,9 @@ import { projectsData } from './constants/projectsData';
 import { SLIDE_IDS } from './constants/slideIds';
 import { generateSpiralPositions } from './utils/generatePositions';
 
-const positions = generateSpiralPositions(projectsData.length);
+const positions = generateSpiralPositions(projectsData.length + 1);
 const projects = projectsData.map((p, i) => ({ ...p, position: positions[i] }));
+const contributionsPosition = positions[positions.length - 1];
 
 function App() {
   useEffect(() => {
@@ -168,6 +170,8 @@ function App() {
         {projects.map((project) => (
           <ProjectSlide key={project.id} project={project} />
         ))}
+
+        <ContributionsSlide position={contributionsPosition} />
 
         <OverviewSlide />
       </div>

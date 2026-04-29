@@ -31,6 +31,7 @@ export interface Project {
   position?: Position;
   description: string;
   tech: string[];
+  topics: string[];
   links: Link[];
   layout: string;
 }

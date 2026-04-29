@@ -1,7 +1,7 @@
 export const SLIDE_IDS = {
   TITLE: 'title',
   AGENTIC_WEBSITE: 'agentic-website',
-  LIKE_SYSTEM: 'like-system',
+  FOLIO_WRITER: 'folio-writer',
   GPU_OPERATOR: 'gpu-operator',
   OPEN_SOURCE: 'open-source',
   OVERVIEW: 'overview',

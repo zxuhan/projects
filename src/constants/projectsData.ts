@@ -1,42 +1,54 @@
 import { Project } from '../types/project';
 import { SLIDE_IDS } from './slideIds';
 import gpuOperatorPreview from '../assets/gpuOperatorPreview.png';
-import nocodeReview from '../assets/nocodePreview.png';
-import likePreview from '../assets/likePreview.png';
+import aiCodePreview from '../assets/aiCodePreview.png';
+import folioWriterPreview from '../assets/folioWriterPreview.png';
 
 export const projectsData: Project[] = [
   {
-    id: SLIDE_IDS.AGENTIC_WEBSITE,
-    name: 'No Code',
-    title: 'No Code',
-    preview: nocodeReview,
+    id: SLIDE_IDS.FOLIO_WRITER,
+    name: 'Folio — AI Article Studio',
+    title: 'Folio — AI Article Studio',
+    preview: folioWriterPreview,
     description:
-      'A full-stack AI platform to generate, preview, and deploy web applications with LLMs and real-time streaming.',
-    tech: ['Spring Boot 3', 'LangChain4j', 'Redis'],
+      'Multi-agent article generator on Spring AI Alibaba StateGraph: token streaming over SSE, parallel image generation across six providers, and an explicit phase state machine you can intervene in.',
+    tech: ['Spring Boot 3', 'Spring AI Alibaba', 'Vue 3'],
+    topics: ['Multi-Agent', 'StateGraph', 'SSE Streaming'],
     links: [
       {
+        type: 'demo',
+        url: 'https://folio.zxuhan.me/',
+        text: 'Live',
+      },
+      {
         type: 'code',
-        url: 'https://github.com/zxuhan/AI-code-platform',
+        url: 'https://github.com/zxuhan/folio-writer',
         text: 'GitHub',
-        githubRepo: 'zxuhan/AI-code-platform',
+        githubRepo: 'zxuhan/folio-writer',
       },
     ],
     layout: 'standard',
   },
   {
-    id: SLIDE_IDS.LIKE_SYSTEM,
-    name: 'High-Performance Like System',
-    title: 'High-Performance Like System',
-    preview: likePreview,
+    id: SLIDE_IDS.AGENTIC_WEBSITE,
+    name: 'AI Code Platform',
+    title: 'AI Code Platform',
+    preview: aiCodePreview,
     description:
-      'A high-concurrency like system with three-tier caching, HeavyKeeper algorithm for hot key detection, and event-driven async processing via Apache Pulsar.',
-    tech: ['Spring Boot 3', 'Redis', 'Caffeine', 'Apache Pulsar'],
+      'One prompt → working web app. LangChain4j multi-model routing across Gemini 2.5, tool-calling Vue scaffolding, SSE streaming, and per-app chat memory on Redis + MySQL.',
+    tech: ['Spring Boot 3', 'LangChain4j', 'Vue 3', 'Redis'],
+    topics: ['Code Generation', 'Tool Calling', 'SSE Streaming'],
     links: [
       {
+        type: 'demo',
+        url: 'https://ai-code.zxuhan.me/',
+        text: 'Live',
+      },
+      {
         type: 'code',
-        url: 'https://github.com/zxuhan/like-app-backend',
+        url: 'https://github.com/zxuhan/AI-code-platform',
         text: 'GitHub',
-        githubRepo: 'zxuhan/like-app-backend',
+        githubRepo: 'zxuhan/AI-code-platform',
       },
     ],
     layout: 'reverse',
@@ -49,6 +61,7 @@ export const projectsData: Project[] = [
     description:
       'Rolling-window GPU-hour budgets for Kubernetes, enforced via eviction, pause, or alert.',
     tech: ['Go', 'Kubernetes', 'Kubebuilder', 'Prometheus'],
+    topics: ['Operator Pattern', 'GPU Quota', 'Observability'],
     links: [
       {
         type: 'code',
@@ -68,14 +81,14 @@ export const mapData = [
     icon: 'fas fa-home',
   },
   {
-    id: SLIDE_IDS.AGENTIC_WEBSITE,
-    name: 'Agentic Website Builder',
-    icon: 'fas fa-robot',
+    id: SLIDE_IDS.FOLIO_WRITER,
+    name: 'Folio — AI Article Studio',
+    icon: 'fas fa-pen-nib',
   },
   {
-    id: SLIDE_IDS.LIKE_SYSTEM,
-    name: 'High-Performance Like System',
-    icon: 'fas fa-heart',
+    id: SLIDE_IDS.AGENTIC_WEBSITE,
+    name: 'AI Code Platform',
+    icon: 'fas fa-robot',
   },
   {
     id: SLIDE_IDS.GPU_OPERATOR,

@@ -8,6 +8,6 @@ export default defineConfig({
   },
   plugins: [pluginReact()],
   output: {
-    assetPrefix: 'https://zxuhan.github.io/projects/',
+    assetPrefix: '/projects/',
   },
 });

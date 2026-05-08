@@ -6,6 +6,19 @@ export const contributionsData: ContributionRepo[] = [
     repo: 'pytorch',
     prs: [
       {
+        title:
+          'Docs: recommend stable ABI umbrella headers instead of *_struct.h',
+        number: 181393,
+        url: 'https://github.com/pytorch/pytorch/pull/181393',
+        status: 'merged',
+      },
+      {
+        title: '[dynamo] Accept extra kwargs in CudagraphsBackend.__call__',
+        number: 182989,
+        url: 'https://github.com/pytorch/pytorch/pull/182989',
+        status: 'open',
+      },
+      {
         title: "[dynamo] Skip wrap_inline for exec'd Python functions",
         number: 181531,
         url: 'https://github.com/pytorch/pytorch/pull/181531',
@@ -18,13 +31,6 @@ export const contributionsData: ContributionRepo[] = [
         url: 'https://github.com/pytorch/pytorch/pull/181526',
         status: 'open',
       },
-      {
-        title:
-          'Docs: recommend stable ABI umbrella headers instead of *_struct.h',
-        number: 181393,
-        url: 'https://github.com/pytorch/pytorch/pull/181393',
-        status: 'merged',
-      },
     ],
   },
   {
@@ -32,40 +38,15 @@ export const contributionsData: ContributionRepo[] = [
     repo: 'react',
     prs: [
       {
-        title: '[shared] shallowEqual: avoid Object.keys(objB) allocation',
-        number: 36348,
-        url: 'https://github.com/facebook/react/pull/36348',
-        status: 'open',
-      },
-      {
         title: '[DevTools] Preserve -Infinity in inspected values',
         number: 36347,
         url: 'https://github.com/facebook/react/pull/36347',
         status: 'merged',
       },
-    ],
-  },
-  {
-    org: 'tensorflow',
-    repo: 'tensorflow',
-    prs: [
       {
-        title:
-          "Grappler: don't rewrite ArgMin/ArgMax over non-strictly-monotonic ops",
-        number: 116709,
-        url: 'https://github.com/tensorflow/tensorflow/pull/116709',
-        status: 'open',
-      },
-    ],
-  },
-  {
-    org: 'kubernetes',
-    repo: 'kubernetes',
-    prs: [
-      {
-        title: 'Fix HPA tolerance drift during rolling updates',
-        number: 138509,
-        url: 'https://github.com/kubernetes/kubernetes/pull/138509',
+        title: '[shared] shallowEqual: avoid Object.keys(objB) allocation',
+        number: 36348,
+        url: 'https://github.com/facebook/react/pull/36348',
         status: 'open',
       },
     ],
@@ -75,17 +56,29 @@ export const contributionsData: ContributionRepo[] = [
     repo: 'spring-boot',
     prs: [
       {
+        title: 'Document configuring multiple connectors with Jetty',
+        number: 50206,
+        url: 'https://github.com/spring-projects/spring-boot/pull/50206',
+        status: 'merged',
+      },
+      {
+        title: 'Add support for TLS named groups in SslBundles',
+        number: 50379,
+        url: 'https://github.com/spring-projects/spring-boot/pull/50379',
+        status: 'open',
+      },
+      {
+        title: 'Log condition report for child management context',
+        number: 50378,
+        url: 'https://github.com/spring-projects/spring-boot/pull/50378',
+        status: 'open',
+      },
+      {
         title:
           'ConfigurationPropertiesReportEndpoint exposes AOP proxy internals',
         number: 50273,
         url: 'https://github.com/spring-projects/spring-boot/pull/50273',
         status: 'open',
-      },
-      {
-        title: 'Document configuring multiple connectors with Jetty',
-        number: 50206,
-        url: 'https://github.com/spring-projects/spring-boot/pull/50206',
-        status: 'merged',
       },
       {
         title: 'Expose Path getters on ApplicationHome and ApplicationTemp',
@@ -96,16 +89,67 @@ export const contributionsData: ContributionRepo[] = [
     ],
   },
   {
-    org: 'JetBrains',
-    repo: 'koog',
+    org: 'kubernetes',
+    repo: 'kubernetes',
     prs: [
       {
         title:
-          'fix(prompt): preserve Google assistant text alongside tool calls',
-        number: 1940,
-        url: 'https://github.com/JetBrains/koog/pull/1940',
+          'kube-aggregator: add request count and latency metrics for extension API servers',
+        number: 138913,
+        url: 'https://github.com/kubernetes/kubernetes/pull/138913',
         status: 'open',
       },
+      {
+        title: 'Remove redundant type assertions in CEL function bindings',
+        number: 138912,
+        url: 'https://github.com/kubernetes/kubernetes/pull/138912',
+        status: 'open',
+      },
+      {
+        title: 'Fix HPA tolerance drift during rolling updates',
+        number: 138509,
+        url: 'https://github.com/kubernetes/kubernetes/pull/138509',
+        status: 'open',
+      },
+    ],
+  },
+  {
+    org: 'langchain4j',
+    repo: 'langchain4j',
+    prs: [
+      {
+        title:
+          'PgVector: parenthesize isNotIn/isNotEqualTo to fix AND/OR precedence (#2513)',
+        number: 5004,
+        url: 'https://github.com/langchain4j/langchain4j/pull/5004',
+        status: 'merged',
+      },
+      {
+        title:
+          'MCP: expose session id on StreamableHttpMcpTransport (#4757)',
+        number: 5003,
+        url: 'https://github.com/langchain4j/langchain4j/pull/5003',
+        status: 'merged',
+      },
+      {
+        title: 'Add per-request HTTP read timeout (#4109)',
+        number: 5073,
+        url: 'https://github.com/langchain4j/langchain4j/pull/5073',
+        status: 'open',
+      },
+      {
+        title:
+          'fix: PojoOutputParser includes inherited fields in format instructions',
+        number: 4996,
+        url: 'https://github.com/langchain4j/langchain4j/pull/4996',
+        status: 'open',
+      },
+    ],
+  },
+  {
+    org: 'JetBrains',
+    repo: 'koog',
+    prs: [
       {
         title:
           'fix(prompt): accept text/plain Content-Type on Ollama non-streaming responses',
@@ -122,6 +166,13 @@ export const contributionsData: ContributionRepo[] = [
       },
       {
         title:
+          'fix(prompt): preserve Google assistant text alongside tool calls',
+        number: 1940,
+        url: 'https://github.com/JetBrains/koog/pull/1940',
+        status: 'open',
+      },
+      {
+        title:
           'feat(prompt): add LM Studio client as OpenAI-compatible provider',
         number: 1873,
         url: 'https://github.com/JetBrains/koog/pull/1873',
@@ -130,34 +181,14 @@ export const contributionsData: ContributionRepo[] = [
     ],
   },
   {
-    org: 'langchain4j',
-    repo: 'langchain4j',
+    org: 'tensorflow',
+    repo: 'tensorflow',
     prs: [
       {
-        title: 'Add per-request HTTP read timeout (#4109)',
-        number: 5073,
-        url: 'https://github.com/langchain4j/langchain4j/pull/5073',
-        status: 'open',
-      },
-      {
         title:
-          'PgVector: parenthesize isNotIn/isNotEqualTo to fix AND/OR precedence (#2513)',
-        number: 5004,
-        url: 'https://github.com/langchain4j/langchain4j/pull/5004',
-        status: 'merged',
-      },
-      {
-        title:
-          'MCP: expose session id on StreamableHttpMcpTransport (#4757)',
-        number: 5003,
-        url: 'https://github.com/langchain4j/langchain4j/pull/5003',
-        status: 'merged',
-      },
-      {
-        title:
-          'fix: PojoOutputParser includes inherited fields in format instructions',
-        number: 4996,
-        url: 'https://github.com/langchain4j/langchain4j/pull/4996',
+          "Grappler: don't rewrite ArgMin/ArgMax over non-strictly-monotonic ops",
+        number: 116709,
+        url: 'https://github.com/tensorflow/tensorflow/pull/116709',
         status: 'open',
       },
     ],
@@ -179,7 +210,8 @@ export const contributionsData: ContributionRepo[] = [
         status: 'open',
       },
       {
-        title: 'Fix JSONHas on native JSON returning the extracted value',
+        title:
+          'Fix JSONHas and JSONExtractBool on native JSON returning the extracted value',
         number: 103313,
         url: 'https://github.com/ClickHouse/ClickHouse/pull/103313',
         status: 'open',
@@ -216,6 +248,12 @@ export const contributionsData: ContributionRepo[] = [
     repo: 'minikube',
     prs: [
       {
+        title: 'gomod: bump tablewriter from 1.1.3 to 1.1.4',
+        number: 22869,
+        url: 'https://github.com/kubernetes/minikube/pull/22869',
+        status: 'merged',
+      },
+      {
         title:
           'crio: use V2 registries.conf with unqualified-search-registries',
         number: 22872,
@@ -234,38 +272,6 @@ export const contributionsData: ContributionRepo[] = [
           'podman: propagate network, static-ip, and gpus flags to kic driver',
         number: 22870,
         url: 'https://github.com/kubernetes/minikube/pull/22870',
-        status: 'open',
-      },
-      {
-        title: 'gomod: bump tablewriter from 1.1.3 to 1.1.4',
-        number: 22869,
-        url: 'https://github.com/kubernetes/minikube/pull/22869',
-        status: 'merged',
-      },
-    ],
-  },
-  {
-    org: 'tmc',
-    repo: 'langchaingo',
-    prs: [
-      {
-        title:
-          'llms: support SystemChatMessage in ChatMessageModel.ToChatMessage',
-        number: 1496,
-        url: 'https://github.com/tmc/langchaingo/pull/1496',
-        status: 'open',
-      },
-      {
-        title:
-          'chains: export ChainCallOptions so custom Chain implementations can read options',
-        number: 1495,
-        url: 'https://github.com/tmc/langchaingo/pull/1495',
-        status: 'open',
-      },
-      {
-        title: 'anthropic: preserve all parts in AI message serialization',
-        number: 1494,
-        url: 'https://github.com/tmc/langchaingo/pull/1494',
         status: 'open',
       },
     ],

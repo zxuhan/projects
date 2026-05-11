@@ -1,8 +1,10 @@
 export const SLIDE_IDS = {
   TITLE: 'title',
-  AGENTIC_WEBSITE: 'agentic-website',
+  DISTILL_SQL: 'distill-sql',
+  LLM_ROUTER: 'llm-router',
   FOLIO_WRITER: 'folio-writer',
   GPU_OPERATOR: 'gpu-operator',
+  AGENTIC_WEBSITE: 'agentic-website',
   OPEN_SOURCE: 'open-source',
   OVERVIEW: 'overview',
 } as const;

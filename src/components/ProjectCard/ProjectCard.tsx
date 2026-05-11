@@ -72,12 +72,21 @@ const ProjectCard = memo(({ project }: { project: Project }) => {
   const PreviewSection = useCallback(
     () => (
       <div className="project-preview cursor-target animate">
-        <img
-          className="project-image"
-          src={project.preview}
-          alt={project.title}
-          loading="lazy"
-        />
+        {project.preview ? (
+          <img
+            className="project-image"
+            src={project.preview}
+            alt={project.title}
+            loading="lazy"
+          />
+        ) : (
+          <div
+            className="project-image project-image-placeholder"
+            aria-label={`${project.title} preview pending`}
+          >
+            <i className="fas fa-image" aria-hidden="true"></i>
+          </div>
+        )}
       </div>
     ),
     [project.preview, project.title],

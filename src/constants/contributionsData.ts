@@ -22,7 +22,7 @@ export const contributionsData: ContributionRepo[] = [
         title: "[dynamo] Skip wrap_inline for exec'd Python functions",
         number: 181531,
         url: 'https://github.com/pytorch/pytorch/pull/181531',
-        status: 'open',
+        status: 'merged',
       },
       {
         title:
@@ -60,12 +60,6 @@ export const contributionsData: ContributionRepo[] = [
         number: 50206,
         url: 'https://github.com/spring-projects/spring-boot/pull/50206',
         status: 'merged',
-      },
-      {
-        title: 'Add support for TLS named groups in SslBundles',
-        number: 50379,
-        url: 'https://github.com/spring-projects/spring-boot/pull/50379',
-        status: 'open',
       },
       {
         title: 'Log condition report for child management context',
@@ -248,7 +242,7 @@ export const contributionsData: ContributionRepo[] = [
     repo: 'minikube',
     prs: [
       {
-        title: 'gomod: bump tablewriter from 1.1.3 to 1.1.4',
+        title: 'build: bump tablewriter from 1.1.3 to 1.1.4',
         number: 22869,
         url: 'https://github.com/kubernetes/minikube/pull/22869',
         status: 'merged',

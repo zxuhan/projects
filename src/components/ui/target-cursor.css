@@ -6,9 +6,13 @@
   height: 0;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: difference;
   transform: translate(-50%, -50%);
-  transition: transform 0.1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  /* No mix-blend-mode: it forced a per-frame backdrop blend (huge GPU cost
+     on every mousemove). Theme-aware solid colors below give us cross-theme
+     visibility without touching the compositor's blend pipeline. */
+  /* No transform transition: rAF in target-cursor.tsx writes the new
+     transform every frame, so we want 1:1 tracking, not a 100 ms easing. */
+  transition: opacity 0.2s ease;
 }
 
 .target-cursor-center {
@@ -17,7 +21,7 @@
   top: 50%;
   width: 4px;
   height: 4px;
-  background: white;
+  background: var(--text-primary);
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
@@ -32,7 +36,7 @@
   top: 50%;
   width: 12px;
   height: 12px;
-  border: 3px solid white;
+  border: 3px solid var(--text-primary);
   transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 

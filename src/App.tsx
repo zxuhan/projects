@@ -18,6 +18,20 @@ const projects = projectsData.map((p, i) => ({ ...p, position: positions[i] }));
 const contributionsPosition = positions[positions.length - 1];
 
 function App() {
+  // Warm the image cache + decode all project previews off the main thread on
+  // mount, so navigating to a slide doesn't trigger a synchronous PNG decode
+  // (which would block input — including the cursor — for hundreds of ms).
+  useEffect(() => {
+    projectsData.forEach((p) => {
+      if (!p.preview) return;
+      const img = new Image();
+      img.src = p.preview;
+      // img.decode() pushes decoding to a worker thread; swallow rejections
+      // (older browsers, aborted loads) — we only care about the side effect.
+      img.decode?.().catch(() => {});
+    });
+  }, []);
+
   useEffect(() => {
     let isOverviewMode = false;
 

@@ -1,7 +1,12 @@
 import { Position } from '../types/project';
 
 const RADIUS = 1500;
-const Z_STEP = 200;
+// Z_STEP was 200; halved to 100 so the depth spread across 6+ cards
+// (previously 0..1200) doesn't push the far cards into extreme perspective
+// distortion. Smaller Z range → less per-frame perspective math during
+// impress transitions, which is the biggest compositor cost at this card
+// count. Visual: a slightly subtler 3D depth effect, same spiral.
+const Z_STEP = 100;
 
 export function generateSpiralPositions(count: number): Position[] {
   return Array.from({ length: count }, (_, i) => {

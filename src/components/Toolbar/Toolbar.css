@@ -91,9 +91,7 @@
 [data-theme="dark"] .toolbar-btn::before {
   border-color: var(--border-medium);
   background: rgba(26, 26, 46, 0.95);
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* backdrop-filter removed for performance. */
 }
 
 [data-theme="dark"] .toolbar-btn::after {
@@ -101,8 +99,7 @@
 }
 
 [data-theme="dark"] .toolbar-btn {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* backdrop-filter removed for performance. */
 }
 
 .toolbar-btn:hover {

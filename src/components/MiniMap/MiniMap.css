@@ -18,9 +18,7 @@
   border-radius: 12px;
   background: var(--bg-card);
   box-shadow: 0 8px 32px var(--shadow-light);
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* backdrop-filter blur(12px) removed for performance. */
 }
 
 .nav-list.hidden {

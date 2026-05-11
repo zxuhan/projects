@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { Link, Project } from '../../types/project';
 import './ProjectCard.css';
 
@@ -27,8 +27,52 @@ const ProjectLinks = memo(({ links }: { links: Link[] }) => (
 
 ProjectLinks.displayName = 'ProjectLinks';
 
+/**
+ * Returns whether the given impress step is currently the active one.
+ *
+ * Why this exists: impress.js keeps every step mounted in 3D space — even
+ * off-camera ones. Animated GIFs in off-camera steps keep advancing frames on
+ * the main thread, which competes with impress's transition animation and
+ * blocks input. We use this hook to only mount animated previews on the
+ * active slide, leaving the placeholder up while the slide is parked off-
+ * camera.
+ *
+ * Bails out via React's setState identity check, so the 5 ProjectCards
+ * listening to the same event only re-render the two that actually change
+ * (entering + leaving).
+ */
+function useIsStepActive(stepId: string): boolean {
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    // Pick up the initial step from the URL hash before impress fires events.
+    const initialHash = window.location.hash.slice(1).replace('/', '');
+    if (initialHash === stepId) {
+      setIsActive(true);
+    }
+
+    const handler = (e: Event) => {
+      setIsActive((e.target as Element).id === stepId);
+    };
+    document.addEventListener('impress:stepenter', handler);
+    return () => document.removeEventListener('impress:stepenter', handler);
+  }, [stepId]);
+
+  return isActive;
+}
+
 const ProjectCard = memo(({ project }: { project: Project }) => {
   const isReverse = project.layout === 'reverse';
+  const isActive = useIsStepActive(project.id);
+  const isAnimatedPreview = useMemo(
+    () => project.preview?.toLowerCase().endsWith('.gif') ?? false,
+    [project.preview],
+  );
+  // Mount the <img> for static previews always (cheap — decode once, cached).
+  // Animated GIFs only mount on the active slide, to avoid the continuous
+  // frame-decode tax on off-camera slides.
+  const shouldRenderImage =
+    !!project.preview && (!isAnimatedPreview || isActive);
 
   const techTags = useMemo(
     () => (
@@ -72,12 +116,12 @@ const ProjectCard = memo(({ project }: { project: Project }) => {
   const PreviewSection = useCallback(
     () => (
       <div className="project-preview cursor-target animate">
-        {project.preview ? (
+        {shouldRenderImage ? (
           <img
             className="project-image"
             src={project.preview}
             alt={project.title}
-            loading="lazy"
+            decoding="async"
           />
         ) : (
           <div
@@ -89,7 +133,7 @@ const ProjectCard = memo(({ project }: { project: Project }) => {
         )}
       </div>
     ),
-    [project.preview, project.title],
+    [project.preview, project.title, shouldRenderImage],
   );
 
   return (

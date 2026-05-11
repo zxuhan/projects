@@ -17,14 +17,14 @@
   min-height: 600px;
   padding: 60px 80px;
 
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 
   border: 1px solid var(--border-light);
   border-radius: 20px;
   background: var(--bg-card);
   box-shadow: 0 8px 32px var(--shadow-light);
-
-  backdrop-filter: blur(20px);
+  /* backdrop-filter blur(20px) removed — title slide is always rendered
+     (impress doesn't unmount it), so this was a permanent GPU cost. */
 }
 
 .title-slide:hover {
@@ -261,8 +261,7 @@
   border-radius: 16px;
   background: var(--bg-card);
   box-shadow: 0 16px 40px var(--shadow-medium) , 0 8px 20px var( --shadow-light);
-
-  backdrop-filter: blur(20px);
+  /* backdrop-filter blur(20px) removed for performance. */
   gap: 12px;
 }
 

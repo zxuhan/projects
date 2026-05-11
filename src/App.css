@@ -150,22 +150,12 @@ body {
   height: 100%;
 
   content: '';
-  animation: float 8s ease-in-out infinite;
 
+  /* No infinite `float` animation here: it triggered a continuous repaint of
+     a fixed full-viewport element, which kept the compositor busy 60×/s even
+     when nothing else was happening. The 10 px vertical drift wasn't worth
+     the cost. The static gradient overlay below stays. */
   background: radial-gradient(circle at 25% 25%, var( --bg-gradient-1) 0%, transparent 50%) , radial-gradient( circle at 75% 75%, var( --bg-gradient-2) 0%, transparent 50%);
-}
-
-@keyframes float {
-
-0%,
-100% {
-  transform: translateY(0px);
-}
-
-50% {
-  transform: translateY(-10px);
-}
-
 }
 
 .step {
@@ -180,7 +170,11 @@ body {
   margin: 0;
   padding: 40px;
 
-  transition: all 0.3s ease, opacity 1s, visibility 1s, transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Was `transition: all 0.3s ease, ...` — the `all` clause meant every
+     property change (color, border, etc.) kicked off a 0.3 s transition,
+     producing a constant stream of style recalcs during impress moves.
+     Only opacity/visibility/transform actually need to animate here. */
+  transition: opacity 1s, visibility 1s, transform 1s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
 
   opacity: 0;
@@ -188,13 +182,21 @@ body {
   border-radius: 16px;
   background: var(--bg-card);
   box-shadow: 0 8px 32px var(--shadow-light);
+
+  /* Explicit GPU layer + reflow containment so each card is rasterized once
+     and the compositor just translates/rotates the cached bitmap during
+     impress transitions. Without these, adding cards past ~4 makes the
+     compositor re-rasterize the whole 3D scene every frame. */
+  will-change: transform;
+  contain: layout;
 }
 
 [data-theme="dark"] .step {
   box-shadow: 0 8px 32px var(--shadow-light) , 0 0 0 1px rgba( 255, 255, 255, 0.05);
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* Dropped backdrop-filter: blur(12px). With 6 steps in 3D space, this was
+     6 full-card blur compositor passes — the GPU couldn't keep up under
+     impress's perspective transforms. The card's solid bg-card (rgba) below
+     still gives visual separation from the floor gradient. */
 }
 
 .impress-enabled .step {
@@ -267,9 +269,11 @@ body {
   transform-origin: center center;
 }
 
-.step * {
-  transition: opacity 0.5s ease-in-out, color 0.3s ease;
-}
+/* Removed `.step * { transition: opacity 0.5s, color 0.3s }`: the universal
+   selector forced the browser to track transition state on every descendant
+   of every step (hundreds of nodes), and fired on every class change. The
+   per-card entrance animations (.animate classes) already handle the visual
+   cue this was providing. */
 
 .step.active * {
   opacity: 1;

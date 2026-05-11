@@ -99,9 +99,8 @@
   color: var(--text-secondary);
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.04);
-
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  /* backdrop-filter blur(8px) removed — multiplied across topic tags on
+     every card it was a major compositor cost. */
 }
 
 .topic-tag:hover {
@@ -116,9 +115,7 @@
   color: var(--text-secondary);
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.05);
-
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  /* backdrop-filter blur(8px) removed (same reason as .topic-tag above). */
 }
 
 .tech-tag:hover {
@@ -219,9 +216,7 @@
 [data-theme="dark"] .stat-item {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.05);
-
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  /* backdrop-filter removed for performance. */
 }
 
 .stat-item:hover {
@@ -284,9 +279,7 @@
   color: var(--text-secondary);
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.05);
-
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  /* backdrop-filter removed for performance. */
 }
 
 .meta-item:hover {
@@ -389,9 +382,7 @@
 
 [data-theme="dark"] .project-link.secondary {
   background: rgba(39, 39, 42, 0.8);
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* backdrop-filter removed for performance. */
 }
 
 .project-link.secondary:hover {
@@ -473,9 +464,8 @@
 [data-theme="dark"] .project-preview {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.02);
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* backdrop-filter blur(12px) removed — this was running on each of 5
+     project cards, in 3D perspective space. Biggest single GPU cost. */
 }
 
 .project-preview:hover {

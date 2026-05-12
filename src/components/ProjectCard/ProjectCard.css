@@ -511,7 +511,8 @@
   background: rgba(99, 102, 241, 0.02);
 }
 
-#gpu-operator .project-image {
+#gpu-operator .project-image,
+#llm-router .project-image {
   padding: 56px;
 
   object-fit: contain;
@@ -539,10 +540,6 @@
 
   opacity: 0.5;
   color: var(--text-secondary);
-}
-
-#llm-router .project-image-placeholder {
-  background: transparent;
 }
 
 @keyframes slideInLeft {

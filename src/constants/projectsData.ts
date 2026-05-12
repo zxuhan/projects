@@ -4,6 +4,7 @@ import gpuOperatorPreview from '../assets/gpuOperatorPreview.png';
 import aiCodePreview from '../assets/aiCodePreview.png';
 import folioWriterPreview from '../assets/folioWriterPreview.png';
 import distillSqlPreview from '../assets/distillSqlPreview.gif';
+import llmRouterPreview from '../assets/llmRouterPreview.png';
 
 export const projectsData: Project[] = [
   {
@@ -34,7 +35,7 @@ export const projectsData: Project[] = [
     id: SLIDE_IDS.LLM_ROUTER,
     name: 'Prefix-Aware LLM Router',
     title: 'Prefix-Aware LLM Router',
-    preview: '',
+    preview: llmRouterPreview,
     description:
       'Go reverse proxy that pins each request to the worker already holding its KV prefix via per-worker radix trees with LRU eviction. ~95% upstream cache hits and 3× gentler TTFT slope vs random on 4× A100 vLLM.',
     tech: ['Go', 'vLLM', 'llama.cpp', 'Prometheus'],

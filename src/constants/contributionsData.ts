@@ -13,16 +13,16 @@ export const contributionsData: ContributionRepo[] = [
         status: 'merged',
       },
       {
-        title: '[dynamo] Accept extra kwargs in CudagraphsBackend.__call__',
-        number: 182989,
-        url: 'https://github.com/pytorch/pytorch/pull/182989',
-        status: 'open',
-      },
-      {
         title: "[dynamo] Skip wrap_inline for exec'd Python functions",
         number: 181531,
         url: 'https://github.com/pytorch/pytorch/pull/181531',
         status: 'merged',
+      },
+      {
+        title: '[dynamo] Accept extra kwargs in CudagraphsBackend.__call__',
+        number: 182989,
+        url: 'https://github.com/pytorch/pytorch/pull/182989',
+        status: 'open',
       },
       {
         title:
@@ -62,16 +62,16 @@ export const contributionsData: ContributionRepo[] = [
         status: 'merged',
       },
       {
-        title: 'Log condition report for child management context',
-        number: 50378,
-        url: 'https://github.com/spring-projects/spring-boot/pull/50378',
-        status: 'open',
-      },
-      {
         title:
           'ConfigurationPropertiesReportEndpoint exposes AOP proxy internals',
         number: 50273,
         url: 'https://github.com/spring-projects/spring-boot/pull/50273',
+        status: 'merged',
+      },
+      {
+        title: 'Log condition report for child management context',
+        number: 50378,
+        url: 'https://github.com/spring-projects/spring-boot/pull/50378',
         status: 'open',
       },
       {
@@ -103,6 +103,72 @@ export const contributionsData: ContributionRepo[] = [
         title: 'Fix HPA tolerance drift during rolling updates',
         number: 138509,
         url: 'https://github.com/kubernetes/kubernetes/pull/138509',
+        status: 'open',
+      },
+    ],
+  },
+  {
+    org: 'vercel',
+    repo: 'ai',
+    prs: [
+      {
+        title:
+          'fix(amazon-bedrock): disable native structured output for claude-opus-4-7',
+        number: 15288,
+        url: 'https://github.com/vercel/ai/pull/15288',
+        status: 'merged',
+      },
+      {
+        title:
+          'fix(anthropic): treat bare ANTHROPIC_BASE_URL host as /v1 endpoint',
+        number: 15545,
+        url: 'https://github.com/vercel/ai/pull/15545',
+        status: 'open',
+      },
+      {
+        title:
+          'fix(amazon-bedrock): accept citation deltas in Converse stream schema',
+        number: 15501,
+        url: 'https://github.com/vercel/ai/pull/15501',
+        status: 'open',
+      },
+      {
+        title: 'fix(cerebras): match actual Cerebras error envelope shape',
+        number: 15386,
+        url: 'https://github.com/vercel/ai/pull/15386',
+        status: 'open',
+      },
+      {
+        title: 'docs(ai): correct onToolCall JSDoc on return value handling',
+        number: 15287,
+        url: 'https://github.com/vercel/ai/pull/15287',
+        status: 'open',
+      },
+    ],
+  },
+  {
+    org: 'spring-projects',
+    repo: 'spring-ai',
+    prs: [
+      {
+        title:
+          'GH-5882: Preserve observation convention when copying advisor chain',
+        number: 6039,
+        url: 'https://github.com/spring-projects/spring-ai/pull/6039',
+        status: 'merged',
+      },
+      {
+        title:
+          'GH-6119: Use class literal for ChatClient autoconf ordering',
+        number: 6126,
+        url: 'https://github.com/spring-projects/spring-ai/pull/6126',
+        status: 'open',
+      },
+      {
+        title:
+          'GH-5812: Use INTERNAL_ERROR for runtime exceptions in resource/prompt callbacks',
+        number: 6038,
+        url: 'https://github.com/spring-projects/spring-ai/pull/6038',
         status: 'open',
       },
     ],
@@ -160,6 +226,13 @@ export const contributionsData: ContributionRepo[] = [
       },
       {
         title:
+          'fix(prompt): forward Anthropic thinking signature through streaming',
+        number: 2010,
+        url: 'https://github.com/JetBrains/koog/pull/2010',
+        status: 'open',
+      },
+      {
+        title:
           'fix(prompt): preserve Google assistant text alongside tool calls',
         number: 1940,
         url: 'https://github.com/JetBrains/koog/pull/1940',
@@ -170,69 +243,6 @@ export const contributionsData: ContributionRepo[] = [
           'feat(prompt): add LM Studio client as OpenAI-compatible provider',
         number: 1873,
         url: 'https://github.com/JetBrains/koog/pull/1873',
-        status: 'open',
-      },
-    ],
-  },
-  {
-    org: 'tensorflow',
-    repo: 'tensorflow',
-    prs: [
-      {
-        title:
-          "Grappler: don't rewrite ArgMin/ArgMax over non-strictly-monotonic ops",
-        number: 116709,
-        url: 'https://github.com/tensorflow/tensorflow/pull/116709',
-        status: 'open',
-      },
-    ],
-  },
-  {
-    org: 'ClickHouse',
-    repo: 'ClickHouse',
-    prs: [
-      {
-        title: 'Report thread-count metrics for <protocols> endpoints',
-        number: 103316,
-        url: 'https://github.com/ClickHouse/ClickHouse/pull/103316',
-        status: 'open',
-      },
-      {
-        title: 'Reject GRANT role TO itself',
-        number: 103315,
-        url: 'https://github.com/ClickHouse/ClickHouse/pull/103315',
-        status: 'open',
-      },
-      {
-        title:
-          'Fix JSONHas and JSONExtractBool on native JSON returning the extracted value',
-        number: 103313,
-        url: 'https://github.com/ClickHouse/ClickHouse/pull/103313',
-        status: 'open',
-      },
-    ],
-  },
-  {
-    org: 'vllm-project',
-    repo: 'vllm',
-    prs: [
-      {
-        title:
-          '[Bugfix] Quiet weight prefetch logs when executor is shutting down',
-        number: 40615,
-        url: 'https://github.com/vllm-project/vllm/pull/40615',
-        status: 'open',
-      },
-    ],
-  },
-  {
-    org: 'axolotl-ai-cloud',
-    repo: 'axolotl',
-    prs: [
-      {
-        title: 'fix: probe GPU capabilities on Ray worker, not driver (#3179)',
-        number: 3619,
-        url: 'https://github.com/axolotl-ai-cloud/axolotl/pull/3619',
         status: 'open',
       },
     ],
@@ -267,6 +277,76 @@ export const contributionsData: ContributionRepo[] = [
         number: 22870,
         url: 'https://github.com/kubernetes/minikube/pull/22870',
         status: 'open',
+      },
+    ],
+  },
+  {
+    org: 'huggingface',
+    repo: 'diffusers',
+    prs: [
+      {
+        title:
+          '[pipelines] fix SD3 crash with pre-computed prompt_embeds and num_images_per_prompt',
+        number: 13755,
+        url: 'https://github.com/huggingface/diffusers/pull/13755',
+        status: 'open',
+      },
+      {
+        title:
+          '[schedulers] fix RecursionError in CosineDPMSolverMultistepScheduler',
+        number: 13754,
+        url: 'https://github.com/huggingface/diffusers/pull/13754',
+        status: 'open',
+      },
+    ],
+  },
+  {
+    org: 'ClickHouse',
+    repo: 'ClickHouse',
+    prs: [
+      {
+        title:
+          'Fix JSONHas and JSONExtractBool on native JSON returning the extracted value',
+        number: 103313,
+        url: 'https://github.com/ClickHouse/ClickHouse/pull/103313',
+        status: 'merged',
+      },
+      {
+        title: 'Report thread-count metrics for <protocols> endpoints',
+        number: 103316,
+        url: 'https://github.com/ClickHouse/ClickHouse/pull/103316',
+        status: 'open',
+      },
+      {
+        title: 'Reject GRANT role TO itself',
+        number: 103315,
+        url: 'https://github.com/ClickHouse/ClickHouse/pull/103315',
+        status: 'open',
+      },
+    ],
+  },
+  {
+    org: 'tensorflow',
+    repo: 'tensorflow',
+    prs: [
+      {
+        title:
+          "Grappler: don't rewrite ArgMin/ArgMax over non-strictly-monotonic ops",
+        number: 116709,
+        url: 'https://github.com/tensorflow/tensorflow/pull/116709',
+        status: 'open',
+      },
+    ],
+  },
+  {
+    org: 'axolotl-ai-cloud',
+    repo: 'axolotl',
+    prs: [
+      {
+        title: 'fix: probe GPU capabilities on Ray worker, not driver (#3179)',
+        number: 3619,
+        url: 'https://github.com/axolotl-ai-cloud/axolotl/pull/3619',
+        status: 'merged',
       },
     ],
   },

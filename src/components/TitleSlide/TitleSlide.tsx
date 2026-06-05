@@ -1,5 +1,6 @@
 import { SLIDE_IDS, SLIDE_POSITIONS } from '../../constants/slideIds';
 import { USER_CONFIG } from '../../constants/userConfig';
+import mippoLogo from '../../assets/mippo.svg';
 import { BlurFade } from '../ui/blur-fade';
 import './TitleSlide.css';
 
@@ -29,7 +30,7 @@ const TitleSlide = () => {
           <BlurFade delay={0.2} inView>
             <div className="greeting-section">
               <h1 className="profile-name">
-                Hey 👋, I'm <span className="cursor-target">Xuhan Zhuang</span>!
+                Hey, I'm <span className="cursor-target">Xuhan Zhuang</span>!
               </h1>
             </div>
           </BlurFade>
@@ -52,6 +53,20 @@ const TitleSlide = () => {
             </BlurFade>
           ))}
         </div>
+
+        <BlurFade delay={0.6} inView>
+          <div className="building-badge cursor-target">
+            <img
+              src={mippoLogo}
+              alt="Mippo logo"
+              className="building-badge-logo"
+            />
+            <span className="building-badge-text">
+              <span className="building-badge-label">Building</span>
+              <span className="building-badge-name">Mippo</span>
+            </span>
+          </div>
+        </BlurFade>
 
         <BlurFade delay={0.7} inView>
           <div className="social-links">

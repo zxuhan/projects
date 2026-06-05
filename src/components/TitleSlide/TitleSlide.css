@@ -191,6 +191,88 @@
   color: var(--text-primary);
 }
 
+/* Building Mippo badge — uses the Mippo brand greens so it reads as a
+   distinct startup mark while still matching the card aesthetic. */
+
+.building-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 18px 7px 9px;
+
+  cursor: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  border: 1px solid rgba(115, 158, 105, 0.35);
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    rgba(115, 158, 105, 0.12),
+    rgba(62, 106, 77, 0.06)
+  );
+
+  gap: 10px;
+}
+
+.building-badge:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(115, 158, 105, 0.6);
+  box-shadow: 0 8px 24px rgba(62, 106, 77, 0.18);
+}
+
+.building-badge-logo {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  filter: drop-shadow(0 1px 2px rgba(62, 106, 77, 0.25));
+}
+
+.building-badge:hover .building-badge-logo {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.building-badge-text {
+  display: inline-flex;
+  align-items: baseline;
+
+  font-size: 0.95rem;
+  line-height: 1;
+  white-space: nowrap;
+
+  gap: 6px;
+}
+
+.building-badge-label {
+  font-weight: 500;
+
+  color: var(--text-secondary);
+}
+
+.building-badge-name {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+
+  color: #3e6a4d;
+}
+
+[data-theme='dark'] .building-badge {
+  border-color: rgba(115, 158, 105, 0.3);
+  background: linear-gradient(
+    135deg,
+    rgba(115, 158, 105, 0.16),
+    rgba(115, 158, 105, 0.05)
+  );
+}
+
+[data-theme='dark'] .building-badge-name {
+  color: #8fbf84;
+}
+
 .social-links {
   display: flex;
   flex-wrap: wrap;

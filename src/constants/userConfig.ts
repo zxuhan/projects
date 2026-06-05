@@ -6,9 +6,9 @@ export const USER_CONFIG = {
   NAME: 'Xuhan Zhuang',
   JOB_TITLE: 'Software Engineer',
   BIO: [
-    '👨‍💻 Front | Back | Left | Right | End Engineer',
-    '✨ Building What People Want',
-    '🤖 AI Enthusiast | Exploring AI-powered Products',
+    'Front | Back | Left | Right | End Engineer',
+    'Building What People Want',
+    'AI Enthusiast | Exploring AI-powered Products',
   ],
   WECHAT_ID: 'zxuhan',
 

@@ -22,7 +22,7 @@ export const contributionsData: ContributionRepo[] = [
         title: '[dynamo] Accept extra kwargs in CudagraphsBackend.__call__',
         number: 182989,
         url: 'https://github.com/pytorch/pytorch/pull/182989',
-        status: 'open',
+        status: 'merged',
       },
       {
         title:
@@ -162,7 +162,7 @@ export const contributionsData: ContributionRepo[] = [
           'GH-6119: Use class literal for ChatClient autoconf ordering',
         number: 6126,
         url: 'https://github.com/spring-projects/spring-ai/pull/6126',
-        status: 'open',
+        status: 'merged',
       },
       {
         title:

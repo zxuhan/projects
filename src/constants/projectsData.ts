@@ -8,6 +8,30 @@ import llmRouterPreview from '../assets/llmRouterPreview.png';
 
 export const projectsData: Project[] = [
   {
+    id: SLIDE_IDS.FOLIO_WRITER,
+    name: 'Folio — AI Article Studio',
+    title: 'Folio — AI Article Studio',
+    preview: folioWriterPreview,
+    description:
+      'Multi-agent article generator on Spring AI Alibaba StateGraph: token streaming over SSE, parallel image generation across six providers, and an explicit phase state machine you can intervene in.',
+    tech: ['Spring Boot 3', 'Spring AI Alibaba', 'Vue 3'],
+    topics: ['Multi-Agent', 'StateGraph', 'SSE Streaming'],
+    links: [
+      {
+        type: 'demo',
+        url: 'https://folio.zxuhan.me/',
+        text: 'Live',
+      },
+      {
+        type: 'code',
+        url: 'https://github.com/zxuhan/folio-writer',
+        text: 'GitHub',
+        githubRepo: 'zxuhan/folio-writer',
+      },
+    ],
+    layout: 'standard',
+  },
+  {
     id: SLIDE_IDS.DISTILL_SQL,
     name: 'Text-To-SQL Distillation',
     title: 'Text-To-SQL Distillation',
@@ -29,7 +53,7 @@ export const projectsData: Project[] = [
         githubRepo: 'zxuhan/distill-sql',
       },
     ],
-    layout: 'standard',
+    layout: 'reverse',
   },
   {
     id: SLIDE_IDS.LLM_ROUTER,
@@ -46,30 +70,6 @@ export const projectsData: Project[] = [
         url: 'https://github.com/zxuhan/llm-router',
         text: 'GitHub',
         githubRepo: 'zxuhan/llm-router',
-      },
-    ],
-    layout: 'reverse',
-  },
-  {
-    id: SLIDE_IDS.FOLIO_WRITER,
-    name: 'Folio — AI Article Studio',
-    title: 'Folio — AI Article Studio',
-    preview: folioWriterPreview,
-    description:
-      'Multi-agent article generator on Spring AI Alibaba StateGraph: token streaming over SSE, parallel image generation across six providers, and an explicit phase state machine you can intervene in.',
-    tech: ['Spring Boot 3', 'Spring AI Alibaba', 'Vue 3'],
-    topics: ['Multi-Agent', 'StateGraph', 'SSE Streaming'],
-    links: [
-      {
-        type: 'demo',
-        url: 'https://folio.zxuhan.me/',
-        text: 'Live',
-      },
-      {
-        type: 'code',
-        url: 'https://github.com/zxuhan/folio-writer',
-        text: 'GitHub',
-        githubRepo: 'zxuhan/folio-writer',
       },
     ],
     layout: 'standard',
@@ -126,6 +126,11 @@ export const mapData = [
     icon: 'fas fa-home',
   },
   {
+    id: SLIDE_IDS.FOLIO_WRITER,
+    name: 'Folio — AI Article Studio',
+    icon: 'fas fa-pen-nib',
+  },
+  {
     id: SLIDE_IDS.DISTILL_SQL,
     name: 'Text-To-SQL Distillation',
     icon: 'fas fa-database',
@@ -134,11 +139,6 @@ export const mapData = [
     id: SLIDE_IDS.LLM_ROUTER,
     name: 'Prefix-Aware LLM Router',
     icon: 'fas fa-route',
-  },
-  {
-    id: SLIDE_IDS.FOLIO_WRITER,
-    name: 'Folio — AI Article Studio',
-    icon: 'fas fa-pen-nib',
   },
   {
     id: SLIDE_IDS.GPU_OPERATOR,

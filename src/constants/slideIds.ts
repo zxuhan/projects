@@ -1,5 +1,6 @@
 export const SLIDE_IDS = {
   TITLE: 'title',
+  LUMEN: 'lumen',
   DISTILL_SQL: 'distill-sql',
   LLM_ROUTER: 'llm-router',
   FOLIO_WRITER: 'folio-writer',

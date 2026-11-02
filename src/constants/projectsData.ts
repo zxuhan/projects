@@ -5,8 +5,33 @@ import aiCodePreview from '../assets/aiCodePreview.png';
 import folioWriterPreview from '../assets/folioWriterPreview.png';
 import distillSqlPreview from '../assets/distillSqlPreview.gif';
 import llmRouterPreview from '../assets/llmRouterPreview.png';
+import lumenPreview from '../assets/lumenPreview.png';
 
 export const projectsData: Project[] = [
+  {
+    id: SLIDE_IDS.LUMEN,
+    name: 'Lumen: Agentic Photo Editor',
+    title: 'Lumen: Agentic Photo Editor',
+    preview: lumenPreview,
+    description:
+      'LangGraph agent turns one sentence into a validated plan over 22 tools and runs it on an ARQ worker with live SSE progress. Edits combine gpt-image-2 with local ONNX models (rembg, SAM, RapidOCR).',
+    tech: ['LangGraph', 'FastAPI', 'React 19', 'Konva'],
+    topics: ['AI Agent', 'Tool Calling', 'Image Editing'],
+    links: [
+      {
+        type: 'demo',
+        url: 'https://lumen.zxuhan.me/',
+        text: 'Live',
+      },
+      {
+        type: 'code',
+        url: 'https://github.com/zxuhan/lumen',
+        text: 'GitHub',
+        githubRepo: 'zxuhan/lumen',
+      },
+    ],
+    layout: 'standard',
+  },
   {
     id: SLIDE_IDS.FOLIO_WRITER,
     name: 'Folio — AI Article Studio',
@@ -29,7 +54,7 @@ export const projectsData: Project[] = [
         githubRepo: 'zxuhan/folio-writer',
       },
     ],
-    layout: 'standard',
+    layout: 'reverse',
   },
   {
     id: SLIDE_IDS.DISTILL_SQL,
@@ -53,7 +78,7 @@ export const projectsData: Project[] = [
         githubRepo: 'zxuhan/distill-sql',
       },
     ],
-    layout: 'reverse',
+    layout: 'standard',
   },
   {
     id: SLIDE_IDS.LLM_ROUTER,
@@ -72,7 +97,7 @@ export const projectsData: Project[] = [
         githubRepo: 'zxuhan/llm-router',
       },
     ],
-    layout: 'standard',
+    layout: 'reverse',
   },
   {
     id: SLIDE_IDS.GPU_OPERATOR,
@@ -91,7 +116,7 @@ export const projectsData: Project[] = [
         githubRepo: 'zxuhan/gpu-k8s-operator',
       },
     ],
-    layout: 'reverse',
+    layout: 'standard',
   },
   {
     id: SLIDE_IDS.AGENTIC_WEBSITE,
@@ -115,7 +140,7 @@ export const projectsData: Project[] = [
         githubRepo: 'zxuhan/AI-code-platform',
       },
     ],
-    layout: 'standard',
+    layout: 'reverse',
   },
 ];
 
@@ -124,6 +149,11 @@ export const mapData = [
     id: SLIDE_IDS.TITLE,
     name: 'Introduction',
     icon: 'fas fa-home',
+  },
+  {
+    id: SLIDE_IDS.LUMEN,
+    name: 'Lumen: Agentic Photo Editor',
+    icon: 'fas fa-wand-magic-sparkles',
   },
   {
     id: SLIDE_IDS.FOLIO_WRITER,

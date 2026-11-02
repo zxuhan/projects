@@ -55,7 +55,12 @@ const TitleSlide = () => {
         </div>
 
         <BlurFade delay={0.6} inView>
-          <div className="building-badge cursor-target">
+          <a
+            className="building-badge cursor-target"
+            href="https://mippo.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src={mippoLogo}
               alt="Mippo logo"
@@ -65,7 +70,7 @@ const TitleSlide = () => {
               <span className="building-badge-label">Building</span>
               <span className="building-badge-name">Mippo</span>
             </span>
-          </div>
+          </a>
         </BlurFade>
 
         <BlurFade delay={0.7} inView>

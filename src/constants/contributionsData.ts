@@ -37,6 +37,12 @@ export const contributionsData: ContributionRepo[] = [
         status: 'merged',
       },
       {
+        title: '[DOM] Fix crash when a form control or id is named nodeName',
+        number: 37875,
+        url: 'https://github.com/react/react/pull/37875',
+        status: 'open',
+      },
+      {
         title: '[DOM] Keep controlled checkbox and radio state on form reset',
         number: 37668,
         url: 'https://github.com/react/react/pull/37668',
@@ -100,15 +106,21 @@ export const contributionsData: ContributionRepo[] = [
         status: 'merged',
       },
       {
-        title: 'Exclude current user message from RAG query history',
-        number: 7080,
-        url: 'https://github.com/spring-projects/spring-ai/pull/7080',
-        status: 'open',
-      },
-      {
         title: 'Handle Ollama responses without a message',
         number: 7066,
         url: 'https://github.com/spring-projects/spring-ai/pull/7066',
+        status: 'merged',
+      },
+      {
+        title: 'Handle @Tool methods on CGLIB subclasses',
+        number: 7160,
+        url: 'https://github.com/spring-projects/spring-ai/pull/7160',
+        status: 'open',
+      },
+      {
+        title: 'Exclude current user message from RAG query history',
+        number: 7080,
+        url: 'https://github.com/spring-projects/spring-ai/pull/7080',
         status: 'open',
       },
       {
@@ -194,6 +206,18 @@ export const contributionsData: ContributionRepo[] = [
         title: 'feat(ai): support onAbort in ToolLoopAgent',
         number: 19673,
         url: 'https://github.com/vercel/ai/pull/19673',
+        status: 'open',
+      },
+    ],
+  },
+  {
+    org: 'kubernetes',
+    repo: 'kubernetes',
+    prs: [
+      {
+        title: 'Remove redundant type assertions in CEL function bindings',
+        number: 138912,
+        url: 'https://github.com/kubernetes/kubernetes/pull/138912',
         status: 'open',
       },
     ],
